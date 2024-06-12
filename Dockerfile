@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0-bookworm-slim
 
 RUN apt update
-RUN apt install -y git wget build-essential python3.11 python3.11-venv python3.11-dev python3-pip
+RUN apt install -y git wget build-essential python3.11 python3.11-venv python3.11-dev python3-huggingface-hub
 
 RUN apt install -y libglib2.0-0 libgl1
 
@@ -12,7 +12,6 @@ COPY . .
 
 ARG HF_TOKEN
 ENV HF_TOKEN=${HF_TOKEN}
-RUN pip3 install huggingface_hub[cli]
 
 RUN mkdir -p /StableSwarmUI/Models/Stable-Diffusion
 ARG DOWNLOAD_PATH=/StableSwarmUI/Models/Stable-Diffusion

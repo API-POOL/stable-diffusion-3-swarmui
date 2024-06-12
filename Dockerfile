@@ -12,7 +12,7 @@ COPY . .
 
 ARG HF_TOKEN
 ENV HF_TOKEN=${HF_TOKEN}
-RUN pip install python3-huggingface_hub[cli]
+RUN pip3 install huggingface_hub[cli]
 
 RUN mkdir -p /StableSwarmUI/Models/Stable-Diffusion
 ARG DOWNLOAD_PATH=/StableSwarmUI/Models/Stable-Diffusion

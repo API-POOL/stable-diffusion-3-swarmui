@@ -5,7 +5,7 @@ steps:
   secretEnv: ['USERNAME', 'PASSWORD']
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
-  args: ['-c', 'docker build --build-arg HF_TOKEN=$_HF_TOKEN -t $$USERNAME/$_IMAGE_NAME:$_IMAGE_TAG .']
+  args: ['-c', 'docker build --build-arg HF_TOKEN=$_HF_TOKEN -t $_REPO_OWNER/$_IMAGE_NAME:$_IMAGE_TAG .']
   env:
     - "DOCKER_BUILDKIT=1"
   secretEnv: ['USERNAME']

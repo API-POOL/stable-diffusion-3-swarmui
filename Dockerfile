@@ -21,7 +21,7 @@ ARG REPO=stabilityai/stable-diffusion-3-medium
 ARG FILE=sd3_medium_incl_clips_t5xxlfp16.safetensors
 
 RUN huggingface-cli download ${REPO} ${FILE} \
-    --local-dir ${DOWNLOAD_PATH}} --token ${HF_TOKEN} 
+    --local-dir ${DOWNLOAD_PATH} --token ${HF_TOKEN} 
 
 EXPOSE 7801
 
